@@ -109,6 +109,8 @@
       text-decoration: none;
       font-size: 14px;
       transition: transform 0.15s ease, background 0.2s ease;
+      cursor: pointer;
+      font-family: inherit;
       border: 1px solid transparent;
     }
 
@@ -121,6 +123,195 @@
     .link-btn.secondary {
       background: rgba(94, 206, 255, 0.08);
       border-color: rgba(94, 206, 255, 0.25);
+    }
+
+    .story-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 13, 26, 0.72);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+    }
+
+    .story-viewer.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .story-dialog {
+      background: var(--panel);
+      border-radius: 18px;
+      width: min(960px, 96vw);
+      max-height: 88vh;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .story-dialog__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .story-dialog__eyebrow {
+      margin: 0 0 4px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .story-dialog__body {
+      padding: 20px;
+      overflow: auto;
+      background: radial-gradient(circle at 0% 0%, rgba(255, 183, 3, 0.08), transparent 35%),
+                  radial-gradient(circle at 100% 0%, rgba(94, 206, 255, 0.08), transparent 35%),
+                  var(--panel);
+    }
+
+    .story-article {
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .story-article h1,
+    .story-article h2,
+    .story-article h3 {
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    .story-article p {
+      margin: 0 0 14px;
+    }
+
+    .story-article hr {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 20px 0;
+    }
+
+    .close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: scale(1.03);
+    }
+
+    .loading,
+    .error {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .algorithms {
+      width: min(1100px, 96vw);
+      margin: 18px auto 68px;
+      background: rgba(28, 37, 65, 0.7);
+      border-radius: 18px;
+      padding: 20px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 12px;
+    }
+
+    .algorithms h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .algorithms .subtitle {
+      margin: 4px 0 0;
+    }
+
+    .algorithm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .algorithm-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .algorithm-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .algorithm-name {
+      font-weight: 700;
+    }
+
+    .copy-btn {
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(94, 206, 255, 0.12);
+      border: 1px solid rgba(94, 206, 255, 0.35);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(94, 206, 255, 0.18);
+    }
+
+    .algorithm-steps {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      direction: rtl;
+      text-align: right;
+    }
+
+    .algorithm-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     footer {
@@ -151,8 +342,8 @@
       </header>
       <p class="tagline">מסע של שלוש דקות, בקו הדק בין רציף לעתיד נקי.</p>
       <div class="links">
-        <a class="link-btn" href="🌱 סיפור 1 – הסיגריה האחרונה בתחנה.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-1" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🌱 סיפור 1 – הסיגריה האחרונה בתחנה.md" data-title="🌱 סיפור 1 – הסיגריה האחרונה בתחנה">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -163,8 +354,8 @@
       </header>
       <p class="tagline">נשימה מדודה שמחליפה דחף, ומלמדת סבלנות מול סערה פנימית.</p>
       <div class="links">
-        <a class="link-btn" href="🌬️ סיפור 2 – שלוש דקות של אוויר.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-2" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🌬️ סיפור 2 – שלוש דקות של אוויר.md" data-title="🌬️ סיפור 2 – שלוש דקות של אוויר">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -175,8 +366,8 @@
       </header>
       <p class="tagline">שקט פתאומי מהטלפון חושף כמה רעש ניהל את הנשימות הקצרות.</p>
       <div class="links">
-        <a class="link-btn" href="📵 סיפור 3 – ההתראה שלא הגיעה.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-3" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="📵 סיפור 3 – ההתראה שלא הגיעה.md" data-title="📵 סיפור 3 – ההתראה שלא הגיעה">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -187,8 +378,8 @@
       </header>
       <p class="tagline">מבט ראשון בעיניים נקיות מגלה אדם חדש מאחורי הערפל.</p>
       <div class="links">
-        <a class="link-btn" href="🪞 סיפור 4 – מראה בלי עשן.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-4" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🪞 סיפור 4 – מראה בלי עשן.md" data-title="🪞 סיפור 4 – מראה בלי עשן">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -199,8 +390,8 @@
       </header>
       <p class="tagline">מעצב ממשקים מגלה שאין כפתור שמכבה דחף, רק מערכת הפעלה אנושית שנושמת.</p>
       <div class="links">
-        <a class="link-btn" href="🧠 סיפור 5 – הכפתור שלא קיים.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-5" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🧠 סיפור 5 – הכפתור שלא קיים.md" data-title="🧠 סיפור 5 – הכפתור שלא קיים">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -211,8 +402,8 @@
       </header>
       <p class="tagline">יד על גזע, נשימה מהשורשים, והדחף הופך לגל שעובר עם הרוח.</p>
       <div class="links">
-        <a class="link-btn" href="🌳 סיפור 6 – עץ הנשימה.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-6" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🌳 סיפור 6 – עץ הנשימה.md" data-title="🌳 סיפור 6 – עץ הנשימה">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -223,8 +414,8 @@
       </header>
       <p class="tagline">דקה של מים קרים מחליפה את הדחף ומדליקה חום פנימי של בחירה.</p>
       <div class="links">
-        <a class="link-btn" href="🚿 סיפור 7 – מקלחת קרה, החלטה חמה.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-7" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🚿 סיפור 7 – מקלחת קרה, החלטה חמה.md" data-title="🚿 סיפור 7 – מקלחת קרה, החלטה חמה">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
 
@@ -235,14 +426,164 @@
       </header>
       <p class="tagline">שעון חול קטן פותח מרחב בחירה בין דחף לפעולה, דקה מעבר לזמן.</p>
       <div class="links">
-        <a class="link-btn" href="🕰️ סיפור 8 – הדקה ה־61.md">לקריאת הסיפור</a>
-        <a class="link-btn secondary" href="#media-8" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+        <button class="link-btn" type="button" data-story="🕰️ סיפור 8 – הדקה ה־61.md" data-title="🕰️ סיפור 8 – הדקה ה־61">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🧃</span>
+        <h2 class="title">סיפור 9 – הבקבוק הירוק</h2>
+      </header>
+      <p class="tagline">בקבוק מים ירוק שמחליף חפיסה ומחזיר נשימה קרירה במקום עשן.</p>
+      <div class="links">
+        <button class="link-btn" type="button" data-story="🧃 סיפור 9 – הבקבוק הירוק.md" data-title="🧃 סיפור 9 – הבקבוק הירוק">לקריאת הסיפור</button>
+        <button class="link-btn secondary" type="button" disabled title="בקרוב: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</button>
       </div>
     </article>
   </main>
 
+  <section class="algorithms" id="video-algorithms">
+    <div>
+      <h2>אלגוריתמים מוכנים ליצירת וידאו לכל סיפור</h2>
+      <p class="subtitle">העתיקו אחד משלושת המתווים, הדביקו ב-NotebookLM או בכל כלי עריכה, ושייכו אותו לסיפור שבחרתם כדי להפיק 3 סרטונים בסגנונות שונים.</p>
+    </div>
+
+    <div class="algorithm-grid">
+      <article class="algorithm-card">
+        <div class="algorithm-head">
+          <div class="algorithm-name">אלגוריתם 1: סרטון 6 חלקים (קצבי)</div>
+          <button class="copy-btn" type="button" data-copy-target="algo-1">העתק</button>
+        </div>
+        <p class="algorithm-summary">מבנה מהיר וממוספר ל-60–90 שניות, עם קריינות חדה וחיתוכים קצרים.</p>
+        <pre class="algorithm-steps" id="algo-1">חלק 1 — פתיח (5–8 שניות): משפט מציף את הקונפליקט המרכזי של הסיפור + צליל פתיחה/שאיפה.
+חלק 2 — הדמות (8–10 שניות): הצגה קצרה של הדמות ומה היא מחפשת לפני השינוי.
+חלק 3 — הדחף (10–12 שניות): המחשה של הדחף/הטריגר המרכזי ותחושת הלחץ.
+חלק 4 — ההחלפה (12–15 שניות): הפעולה החלופית שהדמות בוחרת, עם הדגשה ויזואלית (מים, נשימה, תנועה).
+חלק 5 — רגע ההיפוך (8–12 שניות): משפט מפתח או תובנה שמחליפה את הדחף בהרגל.
+חלק 6 — סגירה (10–12 שניות): משפט השראה + CTA רך: "נסה את זה היום / שתפו למי שצריך נשימה נוספת".</pre>
+      </article>
+
+      <article class="algorithm-card">
+        <div class="algorithm-head">
+          <div class="algorithm-name">אלגוריתם 2: מסע רגשי (סינמטי)</div>
+          <button class="copy-btn" type="button" data-copy-target="algo-2">העתק</button>
+        </div>
+        <p class="algorithm-summary">פירוק לגל רגשי שמלווה את הדמות, מתאים לוידאו פיוטי או אנימציה עדינה.</p>
+        <pre class="algorithm-steps" id="algo-2">שלב 1 — צליל/ריח טריגר: להפעיל חושים (צלצול, ריח עשן, קרירות מים).
+שלב 2 — זיכרון קצר: פלאשבק של 2–3 שניות שמבהיר למה הדחף חזק.
+שלב 3 — עצירה מודעת: הדמות קופאת, מקבלת החלטה לחכות X דקות או לקחת שלוק.
+שלב 4 — תנועה חדשה: פעולה פיזית מחליפה (לגימה, הליכה, נשימה מודרכת).
+שלב 5 — משפט בוחר חיים: משפט אחד שמכריז על הבחירה (ציטוט מתוך הסיפור).
+שלב 6 — עתיד קרוב: הצצה ליום/שבוע קדימה שבו הבחירה כבר שגרה.</pre>
+      </article>
+
+      <article class="algorithm-card">
+        <div class="algorithm-head">
+          <div class="algorithm-name">אלגוריתם 3: מדריך מהיר (אינפוגרפיקה חיה)</div>
+          <button class="copy-btn" type="button" data-copy-target="algo-3">העתק</button>
+        </div>
+        <p class="algorithm-summary">פורמט הדרכתי ל-Reels/Shorts עם טיפים ממוספרים שמבוססים על הסיפור.</p>
+        <pre class="algorithm-steps" id="algo-3">פתיח: כותרת על המסך "החלפה אחת שמצילה נשימה — מבוסס על [שם הסיפור]".
+כרטיס 1 — הטריגר: מה מפעיל את הדמות? (ריח, שעון, הודעה).
+כרטיס 2 — מה עושים במקום: תיאור פעולה אחת פשוטה (מים ירוקים/נשימה/תנועה).
+כרטיס 3 — טיימר/כמות: כמה זמן/שלוקים/צעדים עושים כדי לעבור את הגל.
+כרטיס 4 — משפט מפתח: משפט קצר מתוך הסיפור לשימוש כקריינות/כתובית.
+כרטיס 5 — בוסט חזותי: להציג צבע/חפץ סמל (בקבוק ירוק, חולצת אימון, שעון חול).
+סגירה: CTA קצר "נסו היום ושלחו לחבר שצריך נשימה".</pre>
+      </article>
+    </div>
+  </section>
+
+  <section id="story-viewer" class="story-viewer" aria-hidden="true">
+    <div class="story-dialog" role="dialog" aria-modal="true" aria-labelledby="story-title">
+      <div class="story-dialog__header">
+        <div>
+          <p class="story-dialog__eyebrow">קריאה מתוך המאגר</p>
+          <h3 id="story-title" class="story-dialog__title">סיפור</h3>
+        </div>
+        <button type="button" class="close-btn" aria-label="סגירת חלון הקריאה">&times;</button>
+      </div>
+      <div id="story-content" class="story-dialog__body">
+        <p class="loading">בקרוב נטען את הסיפור שבחרתם…</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     FreeSpark | חיבורים בין נשימה, בחירה, וסיפורים מודרניים לגמילה. עוד סיפורים, סרטונים ואינפוגרפיקות יצטרפו בהמשך.
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    marked.setOptions({ breaks: true, gfm: true });
+
+    const viewer = document.getElementById('story-viewer');
+    const storyContent = document.getElementById('story-content');
+    const storyTitle = document.getElementById('story-title');
+    const closeBtn = viewer.querySelector('.close-btn');
+
+    function openViewer(title) {
+      viewer.classList.add('open');
+      viewer.setAttribute('aria-hidden', 'false');
+      storyTitle.textContent = title || 'סיפור';
+      storyContent.innerHTML = '<p class="loading">טוען את הסיפור…</p>';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewer() {
+      viewer.classList.remove('open');
+      viewer.setAttribute('aria-hidden', 'true');
+      storyContent.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeViewer);
+    viewer.addEventListener('click', (event) => {
+      if (event.target === viewer) closeViewer();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && viewer.classList.contains('open')) {
+        closeViewer();
+      }
+    });
+
+    document.querySelectorAll('[data-story]').forEach((btn) => {
+      btn.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const file = btn.dataset.story;
+        const title = btn.dataset.title || btn.textContent.trim();
+        openViewer(title);
+        try {
+          const response = await fetch(encodeURI(file));
+          if (!response.ok) throw new Error('load_failed');
+          const text = await response.text();
+          const html = marked.parse(text);
+          storyContent.innerHTML = `<article class="story-article">${html}</article>`;
+          storyContent.scrollTop = 0;
+        } catch (error) {
+          storyContent.innerHTML = '<p class="error">לא הצלחתי לטעון את הסיפור. אפשר לרענן ולנסות שוב.</p>';
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-copy-target]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const targetId = button.dataset.copyTarget;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const text = target.innerText.trim();
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = 'הועתק ✓';
+        } catch {
+          button.textContent = 'שגיאה בהעתקה';
+        } finally {
+          setTimeout(() => { button.textContent = 'העתק'; }, 1600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
