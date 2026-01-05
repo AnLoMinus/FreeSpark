@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "ציינו כך בעת שימוש או ציטוט בסיפורי FreeSpark."
+title: "FreeSpark – סיפורי גמילה מודרניים"
+version: "0.1.0"
+date-released: 2026-01-05
+authors:
+  - family-names: "יעקובוב"
+    given-names: "משה לאון"
+    alias: "AnLoMinus"
+keywords:
+  - "סיפורים מודרניים"
+  - "גמילה"
+  - "עברית"
+  - "נשימה"
+repository-code: "https://github.com/FreeSpark/FreeSpark"
+license: "MIT"
+abstract: "אוסף סיפורים קצרים בעברית עם דמויות ניטרליות (פלוני/אלמוני) שנועדו לתמוך בשיח על גמילה והרגלים בריאים."
