@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeSpark | סיפורי גמילה מודרניים</title>
+  <style>
+    :root {
+      --bg: #0b132b;
+      --panel: #1c2541;
+      --accent: #ffb703;
+      --muted: #cfd8e3;
+      --text: #f8fafc;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Assistant', 'Alef', Arial, sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 183, 3, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(94, 206, 255, 0.1), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 48px 24px 24px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      margin: 12px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    main {
+      width: min(1100px, 96vw);
+      margin: 0 auto 64px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .card header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      text-align: right;
+    }
+
+    .icon {
+      font-size: 26px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .tagline {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      transition: transform 0.15s ease, background 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 183, 3, 0.35);
+    }
+
+    .link-btn.secondary {
+      background: rgba(94, 206, 255, 0.08);
+      border-color: rgba(94, 206, 255, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px 12px 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FreeSpark — סיפורי חופש וניצוצות</h1>
+    <p class="subtitle">
+      אוסף סיפורים מודרניים לגמילה מהתמכרויות, עם מרחב עתידי להטמעת סרטונים, מצגות, אינפוגרפיקות וכרטיסיות לימוד לכל סיפור.
+    </p>
+  </header>
+
+  <main>
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🌱</span>
+        <h2 class="title">סיפור 1 – הסיגריה האחרונה בתחנה</h2>
+      </header>
+      <p class="tagline">מסע של שלוש דקות, בקו הדק בין רציף לעתיד נקי.</p>
+      <div class="links">
+        <a class="link-btn" href="🌱 סיפור 1 – הסיגריה האחרונה בתחנה.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-1" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🌬️</span>
+        <h2 class="title">סיפור 2 – שלוש דקות של אוויר</h2>
+      </header>
+      <p class="tagline">נשימה מדודה שמחליפה דחף, ומלמדת סבלנות מול סערה פנימית.</p>
+      <div class="links">
+        <a class="link-btn" href="🌬️ סיפור 2 – שלוש דקות של אוויר.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-2" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">📵</span>
+        <h2 class="title">סיפור 3 – ההתראה שלא הגיעה</h2>
+      </header>
+      <p class="tagline">שקט פתאומי מהטלפון חושף כמה רעש ניהל את הנשימות הקצרות.</p>
+      <div class="links">
+        <a class="link-btn" href="📵 סיפור 3 – ההתראה שלא הגיעה.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-3" title="עתידי: וידאו, מצגת, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🪞</span>
+        <h2 class="title">סיפור 4 – מראה בלי עשן</h2>
+      </header>
+      <p class="tagline">מבט ראשון בעיניים נקיות מגלה אדם חדש מאחורי הערפל.</p>
+      <div class="links">
+        <a class="link-btn" href="🪞 סיפור 4 – מראה בלי עשן.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-4" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🧠</span>
+        <h2 class="title">סיפור 5 – הכפתור שלא קיים</h2>
+      </header>
+      <p class="tagline">מעצב ממשקים מגלה שאין כפתור שמכבה דחף, רק מערכת הפעלה אנושית שנושמת.</p>
+      <div class="links">
+        <a class="link-btn" href="🧠 סיפור 5 – הכפתור שלא קיים.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-5" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🌳</span>
+        <h2 class="title">סיפור 6 – עץ הנשימה</h2>
+      </header>
+      <p class="tagline">יד על גזע, נשימה מהשורשים, והדחף הופך לגל שעובר עם הרוח.</p>
+      <div class="links">
+        <a class="link-btn" href="🌳 סיפור 6 – עץ הנשימה.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-6" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🚿</span>
+        <h2 class="title">סיפור 7 – מקלחת קרה, החלטה חמה</h2>
+      </header>
+      <p class="tagline">דקה של מים קרים מחליפה את הדחף ומדליקה חום פנימי של בחירה.</p>
+      <div class="links">
+        <a class="link-btn" href="🚿 סיפור 7 – מקלחת קרה, החלטה חמה.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-7" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <header>
+        <span class="icon" aria-hidden="true">🕰️</span>
+        <h2 class="title">סיפור 8 – הדקה ה־61</h2>
+      </header>
+      <p class="tagline">שעון חול קטן פותח מרחב בחירה בין דחף לפעולה, דקה מעבר לזמן.</p>
+      <div class="links">
+        <a class="link-btn" href="🕰️ סיפור 8 – הדקה ה־61.md">לקריאת הסיפור</a>
+        <a class="link-btn secondary" href="#media-8" title="עתידי: וידאו, מצגות, כרטיסיות">מדיה ולמידה (בקרוב)</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    FreeSpark | חיבורים בין נשימה, בחירה, וסיפורים מודרניים לגמילה. עוד סיפורים, סרטונים ואינפוגרפיקות יצטרפו בהמשך.
+  </footer>
+</body>
+</html>
